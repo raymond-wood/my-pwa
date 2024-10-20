@@ -9,15 +9,24 @@ function fetchData() {
   // Replace with your Google Apps Script Web App URL
   const apiUrl = 'https://script.google.com/macros/s/AKfycby9ht0_OvXy6LIYju4T1UNoSO3uZ3g0JFpofiokiI6aWB8SzZdbZdqXn9Nm8p7x_np2-Q/exec';
 
+  console.log("Fetching data...");
+
   fetch(apiUrl)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
-      // Display the fetched data in the 'data' div
+      console.log("Data fetched successfully:", data);
       const dataDiv = document.getElementById('data');
       dataDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
     })
     .catch(error => {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
+      const dataDiv = document.getElementById('data');
+      dataDiv.innerHTML = '<p style="color:red;">Error fetching data. Check console for details.</p>';
     });
 }
 
