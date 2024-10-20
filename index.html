@@ -3,14 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PWA Hosted on GitHub Pages</title>
+  <title>PWA with Data Fetching and Submission</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:,">
 </head>
 <body>
-  <h1>PWA with Service Worker Hosted on GitHub Pages</h1>
+  <h1>PWA with Data Fetching and Submission</h1>
   
+  <!-- Input Form for data submission -->
+  <form id="dataForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br><br>
+    
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
+    
+    <button type="submit">Submit Data</button>
+  </form>
+
+  <br>
   <button onclick="fetchData()">Fetch Data</button>
-  <button onclick="saveData()">Save Data</button>
   
   <div id="data"></div>
 
