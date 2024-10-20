@@ -50,7 +50,13 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     },
     body: JSON.stringify(formData)
   })
-    .then(response => response.json())
+    .then(response => {
+      console.log("Response status:", response.status);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
       console.log("Data submitted successfully:", data);
       alert('Data submitted successfully!');
