@@ -6,7 +6,7 @@ if ('serviceWorker' in navigator) {
 
 // Fetch data from Google Apps Script API 
 function fetchData() {
-  const apiUrl = 'https://script.google.com/macros/s/AKfycby9ht0_OvXy6LIYju4T1UNoSO3uZ3g0JFpofiokiI6aWB8SzZdbZdqXn9Nm8p7x_np2-Q/exec';  // Replace with your actual URL
+  const apiUrl = 'https://script.google.com/macros/s/AKfycby9ht0_OvXy6LIYju4T1UNoSO3uZ3g0JFpofiokiI6aWB8SzZdbZdqXn9Nm8p7x_np2-Q/exec';  // Replace with your actual URL 
   
   fetch(apiUrl)
     .then(response => {
