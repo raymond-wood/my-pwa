@@ -4,7 +4,7 @@ if ('serviceWorker' in navigator) {
     .catch(err => console.log('Service Worker registration failed:', err));
 }
 
-// Fetch data from Google Apps Script API
+// Fetch data from Google Apps Script API 
 function fetchData() {
   const apiUrl = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';  // Replace with your actual URL
   
